@@ -1,0 +1,76 @@
+<section id="intro">
+    <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0">تفاصيل <span> الاميل </span> </h1>
+        <p class="mb-4 pb-0">مرحبا بيك في شركة يوتيوبر للنجاح </p>
+    </div>
+</section>
+<main id="main" class="main-page">
+    <!--==========================
+      Speaker Details Section
+    ============================-->
+    <section id="speakers-details" class="wow fadeIn">
+        <div class="container">
+            <div class="section-header">
+                <h2>مرحبا بك في شركة يوتيوبر</h2>
+                <p>يسعدنا وجودك معنا.</p>
+            </div>
+            <div class="row ">
+                <div class="myOrders col-md-12 text-right ">
+                    <legend class="lable ">
+                        الاميل
+                    </legend>
+                    <div class="lable col-md-12" *ngIf="Email">
+                        <div *ngIf="!Email"> loooddding</div>
+                        <div class="myOrders2">
+                            <img style="width:181px;height:175px;margin-bottom:40px;margin-top: -11px;
+                            " src="{{Email.avatar}}" alt="Speaker 1" class="img-fluid m-l-10 center ">
+                            <h3 class="text-center lead"><a style="box-shadow: 0px 0px 30px rgb(248, 34, 73, ); font-weight: bold;">{{Email.name
+                                    }}</a></h3>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="row ">
+                <div class="myOrders col-md-12 text-right  ">
+                    <legend class="lable ">
+                        اشتركاتي
+                    </legend>
+                    <div class="row " *ngIf=" Email ">
+                        <div class="lable col-xs-2 col-md-4 col-lg-3 " *ngFor="let sub of Email.Sub ">
+                            <div class="myOrders2 ">
+                                <img style="width:181px;height:175px;margin-bottom:40px;margin-top: -11px; " src="{{sub.avatar}} " *ngIf="sub.avatar " alt="Speaker 1 " class="img-fluid m-l-12 ">
+                                <h3 class="text-center lead "><a style="box-shadow: 0px 0px 30px rgb(248, 34, 73, ); font-weight: bold; " target="_blanck " href="https://www.youtube.com/channel/{{sub.IdChannal}} ">{{sub.name
+                                        | slice:0:30}}</a>
+                                </h3>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <br>
+            <div class="row ">
+
+                <div class="myOrders col-md-12 text-right ">
+
+                    <legend class="lable ">
+                        الاشتركات المطلوبه
+                    </legend>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+</main>

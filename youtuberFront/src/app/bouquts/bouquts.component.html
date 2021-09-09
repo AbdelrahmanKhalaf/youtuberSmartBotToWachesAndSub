@@ -1,0 +1,93 @@
+<section id="intro">
+    <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0"> <span> الباقات </span> </h1>
+        <p class="mb-4 pb-0">مرحبا بيك في شركة يوتيوبر للنجاح </p>
+    </div>
+</section>
+<section id="buy-tickets" class="section-with-bg wow fadeInDown">
+    <div class="container">
+        <div class="section-header">
+            <h2>اشتري باقة الان </h2>
+            <p>لنبداء الرحلة بنجاح قناتك وتفعيلها , نحن سعداء بوجدك معانا.</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 offset-lg-2" *ngFor="let bouqute of bouqutes  ">
+                <div class="card mb-5 mb-lg-0">
+                    <div class="card-body">
+                        <h3 class="text-center lead"><a>{{bouqute.title}}</a>
+                        </h3>
+                        <h6 class="card-price text-center"> {{bouqute.price}}
+                            <span>&#163;</span>
+                        </h6>
+                        <hr>
+                        <ul class="fa-ul">
+                            <li><span class="fa-li"><i class="fa fa-check"></i></span>{{bouqute.numberOfDays}} يوم</li>
+
+                            <li><span class="fa-li"><i class="fa fa-check"></i></span> ستحصل علي {{bouqute.collectorOfDailyHours}} ساعه يومياً
+                            </li>
+                            <li><span class="fa-li"><i class="fa fa-check"></i></span>ستحصل علي {{bouqute.dailySubscriberSum}} مشتركين يومياً
+                            </li>
+                            <li><span class="fa-li"><i class="fa fa-check"></i></span> {{bouqute.dailyWorkingHours | count}} ساعات يوميه عمل</li>
+                            <li><span class="fa-li"><i class="fa fa-check"></i></span>{{bouqute.daysOff}} ايام اجازة
+                            </li>
+                            <li><span class="fa-li"><i class="fa fa-check"></i></span> استهلاك الانترنت {{bouqute.monthlyInternetConsumption}} جيجا شهرياً
+                            </li>
+                            <li><span class="fa-li"><i class="fa fa-check"></i></span>{{bouqute.numberOfGrids}} شبكات
+                            </li>
+                            <li><span class="fa-li"><i class="fa fa-check"></i></span>{{bouqute.playlistRequired}} ساعة قائمة التشغيل المطلوبه</li>
+                            <li><span class="fa-li"><i class="fa fa-check"></i></span> 7 ايام تجريبي </li>
+                        </ul>
+                        <hr>
+                        <div class="text-center">
+                            <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="standard-access">اشتري الان</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Modal Order Form -->
+    <div id="buy-ticket-modal" class="modal ">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title text-center">اشتري باقه </h4>
+
+                </div>
+                <div class="modal-body">
+                    <p *ngIf='errorMessage' class=" alert-danger alert">
+                        {{errorMessage}}
+                    </p>
+                    <p *ngIf='!getToken() && errorMessage' class=" alert-danger alert">
+                        {{errorMessage}},انت لست مسجل الان
+                        <a routerLink="/auth/login">الدخول </a> او <a routerLink="/auth/register">التسجيل</a> لكي تسطيع شراء باقه
+                    </p>
+                    <p *ngIf='errorMessage' class=" alert-danger alert"> {{errorMessage}}
+                    </p>
+                    <p *ngIf='message' class="alert alert-primary ">{{message}} افحص ملفك الشخصي
+                        <a routerLink='/my-profile' data-dismiss="modal" aria-label="Close">ملفي الشخصي</a>
+                    </p>
+
+                    <form [formGroup]="postBouqute" (ngSubmit)="PostReantaleBouqute()">
+                        <div class="form-group">
+                            <select id="ticket-type" name="ticket-type" class="form-control" formControlName="idBouqute">
+                                <option value="standard-access">-- اختار الباقه التي تريدها --</option>
+                                <option *ngFor=" let bouqute of bouqutes " value="{{bouqute._id}}">{{bouqute.title}}
+                                </option>
+
+                            </select>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn">اشتري الان </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

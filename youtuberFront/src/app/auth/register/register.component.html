@@ -1,0 +1,180 @@
+<!--==========================
+      Contact Section
+    ============================-->
+<section id="intro">
+    <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0"><span>التسجيل معانا </span> </h1>
+        <p class="mb-4 pb-0">مرحبا بك في العمل معانا نجاحك هو مهمتنا </p>
+    </div>
+</section>
+<main id="main">
+
+    <section id="contact" class="section-bg wow fadeInDwon">
+        <div class="container">
+            <div class="section-header">
+                <h2> مرحبا بك لتسجيل معانا</h2>
+                <p>يسعدنا وجودك معنا..</p>
+            </div>
+            <div class="form">
+                <p *ngIf="errorMessage" class=" alert-danger alert">{{errorMessage}}</p>
+                <p *ngIf="errorMessagePad" class=" alert-danger alert">{{errorMessagePad}}</p>
+                <p *ngIf="message" class=" alert-success alert">{{message}}</p>
+                <!-- <div class="text-center ">
+                    <button (click)="loginGoogle()" type="submit" class="margin-50">
+                        التسجيل بي اميل جوجل
+                        <i class="fa fa-google-plus  fa-1x " aria-hidden="true"></i>
+                    </button>
+                </div> -->
+                <form role="form" class="contactForm" [formGroup]="postUser" (ngSubmit)="PostUser()">
+
+                    <div class="form-row">
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="label1">اسمك </label>
+
+                            <input type="text" name="name" class="form-control" id="name" formControlName="name" />
+
+                            <div *ngIf="(name.touched||errorMessagePad
+                            )  && name.invalid" class="error">
+                                <span *ngIf="name.errors.required">من فضللك ادخل اسمك .</span>
+                                <span *ngIf="name.errors.minlength"> يجب الي قل الاسم عن 8 احرف.</span>
+                                <span *ngIf="name.errors.maxlength">الحد الاقصى للطول .</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="label1">رقم هاتفك</label>
+                            <input type="text" name="phone" class="form-control" id="phone" formControlName="phone" />
+                            <span class="validation" *ngIf="(phone.touched || errorMessagePad
+                            )  && phone.invalid" class="error">
+                                <span *ngIf="phone.errors.required">من فضللك ادخل رقم الهاتف.</span>
+                            <span *ngIf="phone.errors.minlength"> يجب الي يقل رقم الهاتف عن 11 حرفا.</span>
+                            <span *ngIf="phone.errors.maxlength">الحد الاقصي للحروف هو 30.</span>
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="form-row">
+
+                        <div class="form-group col-md-6">
+                            <label class="label1">بريدك الالكتروني</label>
+
+                            <input type="text" name="email" class="form-control" id="email" formControlName="email" />
+
+                            <span *ngIf="(email.touched || errorMessagePad
+                            ) && email.invalid" class="error">
+                                <span *ngIf="email.errors.required">من فضللك ادخل بريك الاكتروني</span>
+                            <span *ngIf="email.errors.minlength">يجب الي يقل الاميل عن 11 حرفا.</span>
+                            <span *ngIf="email.errors.maxlength">الحد الاقصي للحروف هو 300.</span>
+                            <span *ngIf=" email.errors.email">من فضللك ادخل اميل صحيح</span>
+                            </span>
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="example-date-input" class="label1">تاريخ ميلادك</label>
+                            <input class="form-control" min="1997-01-01" max="2030-12-31" placeholder="YYYY-mm-dd" type="date" id="example-date-input" formControlName="age">
+                            <span class="validation" *ngIf="(age.touched || errorMessagePad
+                            )  && age.invalid" class="error ">
+                                <span *ngIf="age.errors.required">من فضللك ادخل تاريخ ميلادك
+                                    .</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="label1">كلمة السر</label>
+                            <input type="password" class="form-control" name="password" id="password" formControlName="password" />
+                            <span class="validation" *ngIf="(password.touched || errorMessagePad
+                            )  && password.invalid" class="error ">
+                                <span *ngIf="password.errors.required">من فضللك ادخل كلمة السر.</span>
+                            <span *ngIf="password.errors.minlength">يجب ان لا تقل كلمة السر عن 8 حرفاً.</span>
+                            <span *ngIf="password.errors.maxlength">الحد الاقصي للحروف هو 28.</span>
+                            </span>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label class="label1">عنوانك</label>
+                            <input type="text" class="form-control" id="address" name="address" formControlName="address" />
+                            <span class="validation" *ngIf="(address.touched || errorMessagePad
+                            )  && address.invalid" class="error">
+                                <span *ngIf="address.errors.required">من فضللك ادخل عنوانك.</span>
+                            <span *ngIf="address.errors.minlength">يجب ألا يقل العنوان عن 11 حرفًا.</span>
+                            <span *ngIf="address.errors.maxlength">الحد الاقصى للحروف هو 100 .</span>
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="label1">قناتك</label>
+                            <input type="text" class="form-control" name="yourChannel" id="yourChannel" formControlName="yourChannel" />
+                            <span class="validation" *ngIf="(yourChannel.touched || errorMessagePad)  && yourChannel.invalid" class="error ">
+                                <span *ngIf="yourChannel.errors.required">من فضللك ادخل قناتك .</span>
+
+
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="label1">الجنس</label>
+                            <select class="form-control" id="gender" value="standard-access" formControlName="gender">
+                                <option value="standard-access">-- اختار --</option>
+                                <option value="0">ذكر</option>
+                                <option value="1">انثي</option>
+                            </select>
+                            <span class="validation" *ngIf="(gender.touched || errorMessagePad)  && gender.invalid" class="error ">
+                                <span *ngIf="gender.errors.required">من فضللك ادخل جنسك.</span>
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+
+
+                        <div class="form-group col-md-12">
+                            <label class="label1">قائمة تشغيللك</label>
+                            <input type="text" class="form-control" id="playlist" name="playlist" formControlName="playlist" />
+                            <span class="validation" *ngIf="(address.touched || errorMessagePad
+                            )  && address.invalid" class="error">
+                                <span *ngIf="address.errors.required">من فضللك ادخل قائمة التشغيل التي تريد العمل
+                                    عليها.</span>
+
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="label1"> كودك الشخصي</label>
+                            <input type="text" class="form-control" name="code" id="code" formControlName="code" />
+                            <span class="validation" *ngIf="(code.touched || errorMessagePad
+                            )  && code.invalid" class="error ">
+                                <span *ngIf="code.errors.required">من فضللك ادخل الكود .</span>
+                            </span>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label class="label1"> كود الصديق</label>
+                            <input type="text" class="form-control" name="codeFrinde" id="codeFrinde" formControlName="codeFrinde" />
+                            <span class="validation" *ngIf="(codeFrinde.touched || errorMessagePad
+                            )  && codeFrinde.invalid" class="error ">
+                                <span *ngIf="codeFrinde.errors.required">من فضللك ادخل كود الصديق .</span>
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="text-center"><button type="submit">التسجيل الان </button></div>
+                    <div class="text-center txt2 p-t-115">
+                        هل تمتللك اميل ؟
+                        <a routerLink="/auth/login">
+                            تسجيل الدخول
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </section>
+</main>
+<!-- #contact -->

@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+.form-control {
+    text-align: right;
+}
+
+label {
+    float: right;
+}
+
+.content-header h1 {
+    text-align: right;
+}
+
+.my-3 {
+    text-align: right;
+}

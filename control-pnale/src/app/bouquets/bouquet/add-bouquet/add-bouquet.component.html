@@ -1,0 +1,136 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Add-business</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a routerLink="/admin">Home</a></li>
+                        <li class="breadcrumb-item active">Add-business</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <p *ngIf="errorMessage" class=" alert-danger alert">{{errorMessage}}</p>
+
+        <form [formGroup]="postBusiness" (ngSubmit)="addBusiness()">
+            <div class="form-group">
+
+                <label for="exampleFormControlInput1">قائمة التشغيل المطلوبه</label>
+                <input type="text" class="form-control" id="playlistRequired" placeholder="قائمة التشغيل المطلوبة " formControlName="playlistRequired">
+                <p *ngIf="playlistRequired.touched  && playlistRequired.invalid" class="alert-danger ">
+                    <strong *ngIf="playlistRequired.errors.required">Please
+                        enter Title</strong>
+                    <strong *ngIf="playlistRequired.errors.minlength">Title
+                        must be at least 7 characters.</strong>
+                    <strong *ngIf="playlistRequired.errors.maxlength">Maxlength is 50.</strong>
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">ساعات العمل اليومية </label>
+                <input class="form-control" type="text" value="03:45:00" id="dailyWorkingHours" formControlName="dailyWorkingHours">
+                <p *ngIf="dailyWorkingHours.touched  && dailyWorkingHours.invalid" class="alert-danger ">
+                    <strong *ngIf="dailyWorkingHours.errors.required">Please
+                        enter dailyWorkingHours</strong>
+
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">عدد الشبكات</label>
+                <input type="text" class="form-control" id="numberOfGrids" placeholder="عدد الشبكات " formControlName="numberOfGrids">
+                <p *ngIf="numberOfGrids.touched  && numberOfGrids.invalid" class="alert-danger ">
+                    <strong *ngIf="numberOfGrids.errors.required">Please
+                        enter numberOfGrids</strong>
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">الاستهلاك الشهري للإنترنت
+                </label>
+
+                <input type="text" class="form-control" id="الاستهلاك الشهري للإنترنت" placeholder="monthlyInternetConsumption " formControlName="monthlyInternetConsumption">
+                <p *ngIf="monthlyInternetConsumption.touched  && monthlyInternetConsumption.invalid" class="alert-danger ">
+                    <strong *ngIf="monthlyInternetConsumption.errors.required">Please
+                        enter monthlyInternetConsumption</strong>
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">أيام عطلة</label>
+                <input placeholder="أيام عطلة " class="form-control" id="daysOff" rows="3" formControlName="daysOff" />
+                <p *ngIf="daysOff.touched  && daysOff.invalid" class="alert-danger ">
+                    <strong *ngIf="daysOff.errors.required">Please
+                        enter Description</strong>
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1"> محصل المشتركين اليوميين</label>
+                <input placeholder="محصل المشتركين اليوميين " class="form-control" id="des" rows="3" formControlName="dailySubscriberSum">
+                <p *ngIf="dailySubscriberSum.touched  && dailySubscriberSum.invalid" class="alert-danger ">
+                    <strong *ngIf="dailySubscriberSum.errors.required">Please
+                        enter dailySubscriberSum</strong>
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1"> مجموع الساعات اليومية </label>
+                <input placeholder="مجموع الساعات اليومية " class="form-control" id="des" rows="3" formControlName="collectorOfDailyHours">
+                <p *ngIf="collectorOfDailyHours.touched  && collectorOfDailyHours.invalid" class="alert-danger ">
+                    <strong *ngIf="collectorOfDailyHours.errors.required">Please
+                        enter collectorOfDailyHours</strong>
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">السعر</label>
+                <input placeholder="السعر " class="form-control" id="des" rows="3" formControlName="price">
+                <p *ngIf="price.touched  && price.invalid" class="alert-danger ">
+                    <strong *ngIf="price.errors.required">Please
+                        enter price</strong>
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">العنوان</label>
+                <input placeholder="العنوان " class="form-control" id="des" rows="3" formControlName="title">
+                <p *ngIf="title.touched  && title.invalid" class="alert-danger ">
+                    <strong *ngIf="title.errors.required">Please
+                        enter title</strong>
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">عدد ايام العمل</label>
+                <input placeholder="عداد ايام العمل " class="form-control" id="numberOfDays" rows="3" formControlName="numberOfDays">
+                <p *ngIf="numberOfDays.touched  && numberOfDays.invalid" class="alert-danger ">
+                    <strong *ngIf="numberOfDays.errors.required">Please
+                        enter numberOfDays</strong>
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1"> الكلامات الدلاليه </label>
+                <input placeholder="الكلامات الدلاليه " class="form-control" id="des" rows="3" formControlName="keyword">
+                <p *ngIf="keyword.touched  && keyword.invalid" class="alert-danger ">
+                    <strong *ngIf="keyword.errors.required">Please
+                        enter keyword</strong>
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1"> الوصف </label>
+                <input placeholder="الوصف " class="form-control" id="des" rows="3" formControlName="des">
+                <p *ngIf="des.touched  && des.invalid" class="alert-danger ">
+                    <strong *ngIf="des.errors.required">Please
+                        enter des</strong>
+                </p>
+            </div>
+            <button type="submit" class="btn btn-outline-info btn-block">حفظ التعديل</button>
+
+        </form>
+
+    </section>
+
+
+
+</div>

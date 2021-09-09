@@ -1,0 +1,54 @@
+<!--==========================
+      Contact Section
+    ============================-->
+<section id="intro">
+    <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0"> تحديث <span>الصوره الشخصيه</span> </h1>
+        <p class="mb-4 pb-0">مرحب بيك في شركة يوتيوبر </p>
+    </div>
+</section>
+<main id="main">
+    <section id="contact" class="section-bg wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h2>مرحبا بك لتحديث الصوره الشخصيه</h2>
+                <p>نحن سعداء لانك معانا.</p>
+            </div>
+            <div class="form">
+                <!-- <p *ngIf="errorMessage" class=" alert-danger alert">{{errorMessage}}</p> -->
+
+                <form role="form" class="contactForm" (ngSubmit)="fileUpload()">
+
+                    <div class="form-row">
+                        <label class="label1"> تحديث صورتي الشخصيه</label>
+                        <div class="form-group col-md-12">
+                            <input type="file" name="avatar" class="form-control" id="avatar" (change)="fileSlecet($event)" accept="image/*" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="standard-access" />
+                        </div>
+                    </div>
+                    <div id="buy-ticket-modal" class="modal ">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title text-center">تحديث الصوره </h4>
+
+                                </div>
+                                <div class="modal-body">
+                                    <image-cropper [imageChangedEvent]="imageChangedEvent" (imageCropped)="imageCropped($event)" [aspectRatio]="1/ 1" [resizeToWidth]='150' [onlyScaleDown]='true' [cropperMinWidth]='350' [roundCropper]='true' style="width: 400px;height: 500px;">
+                                    </image-cropper>
+
+                                    <div class="text-center"><button type="submit">تحديث الصوره الشخصيه</button></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </section>
+</main>
+<!-- #contact -->

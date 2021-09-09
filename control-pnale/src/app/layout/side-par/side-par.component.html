@@ -1,0 +1,124 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+        <img src="./assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">Admin youtuber v1</span>
+    </a>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex" *ngIf="user">
+            <div class="image">
+                <img src="http://localhost:3000/{{user.avatar}}" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <a routerLink="/detilsuser/{{user._id}}" class="d-block">{{user.name}}</a>
+                <h3 class="d-block" *ngIf="user.isAdmin">صاحب السستم</h3>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                <li class="nav-item has-treeview menu-open">
+                    <a routerLink="/admin" class="nav-link active">
+                        <p>
+                            Dashboard
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
+                            youtober
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a routerLink='/bouquets' class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>البقات</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a routerLink='/allAccsept' class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>المستخدمين الموفقين</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a routerLink='/allTryIt' class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>مستخدمين فترة التجربه</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a routerLink='/allNotAccsept' class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>مستخدمين في انتظار الموفقه</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a routerLink='/allBouquteFree' class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>مستخدمين الباقة المجانيه</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a routerLink='/allBouqutePiad' class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>مستخدمين الباقة المدفوعه</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a class="nav-link">
+                        <i class="nav-icon far fa-plus-square"></i>
+                        <p>
+                            Users
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a routerLink="/users" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>جميع المستخدمين</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLink="users/addChannalsToUsers" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>اضافة قائمة تشغيل</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

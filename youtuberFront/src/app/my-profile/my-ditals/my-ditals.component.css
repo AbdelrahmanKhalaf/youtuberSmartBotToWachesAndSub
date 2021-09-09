@@ -1,0 +1,295 @@
+    .nav-menu li.buy-tickets a {
+        background: rgb(233, 237, 251);
+        color: #112363;
+        border: rgb(233, 237, 251);
+        font-weight: bold;
+    }
+    
+    .nav-menu li.buy-tickets a:hover {
+        background: #f82249;
+        border: #f82249;
+        font-weight: bold;
+        color: #fff;
+    }
+    
+    legend {
+        background-color: rgb(233, 237, 251);
+        color: #112363;
+        ;
+        padding: 5px 10px;
+        font-weight: 700;
+        text-align: center;
+        border-radius: 4px;
+    }
+    
+    label {
+        color: #112363;
+        font-size: 17px;
+        border-radius: 26px;
+        margin-bottom: 20px;
+        text-align: center;
+        padding: 4px;
+    }
+    
+    span {
+        color: black;
+        font-size: 15px;
+        border-radius: 26px;
+        padding: 6px;
+        text-transform: capitalize;
+    }
+    
+    .myInfo,
+    .mysocial,
+    .myAvatar,
+    .myOrders,
+    .bordreO {
+        border: #23bdf8 2px groove;
+        padding: 11px 23px 19px 21px;
+        ;
+        border-radius: 10px;
+    }
+    
+    .nav-menu li.buy-tickets a {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    .lable {
+        font-size: 20px;
+        font-weight: 650px;
+    }
+    
+    .m-0 {
+        margin: 0px;
+    }
+    
+    .myProfile {
+        font-size: 23px;
+        border-radius: 8px 8px 2px 2px;
+    }
+    
+    .boredr {
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #ffff;
+    }
+    
+    .m-0 div {
+        margin-bottom: 20px;
+    }
+    
+    .m-0 div .img-fluid {
+        width: 68px;
+        height: 47px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 30px rgb(17, 35, 99, 0.25);
+    }
+    
+    .bordreO {
+        padding: 10px 22px 0px 21px;
+    }
+    
+    .m-0 div .nav-menu li.buy-tickets a {
+        font-size: 14px;
+        width: 126px;
+    }
+    
+    .alert {
+        padding: 5px;
+    }
+    
+    @media (max-width: 1199px) {
+        label[_ngcontent-tbt-c62] {
+            font-size: 10px;
+            font-weight: 550px;
+        }
+    }
+    
+    @media (max-width: 991px) {
+        label[_ngcontent-tbt-c62] {
+            font-size: 10px;
+            font-weight: 550px;
+        }
+    }
+    
+    .edit {
+        box-shadow: 0px 0px 30px rgb(248, 34, 73, );
+        margin-top: 31px;
+        padding: 20px;
+        border: 1px solid #f82249;
+        font-size: 25px;
+    }
+    
+    .myOrders2 {
+        border: #e8edfb 2px solid;
+        box-shadow: 0px 0px 30px rgb(234, 212, 192);
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    
+    .myOrders3 {
+        box-shadow: 0px 0px 30px rgb(248, 34, 73, );
+    }
+    
+    .nav-menu li.buy-tickets a :hover {
+        border: 2px solid rgb(234, 212, 192);
+    }
+    
+    .conversation-wrap {
+        box-shadow: -2px 0 3px #ddd;
+        padding: 0;
+        max-height: 400px;
+        overflow: auto;
+    }
+    
+    .conversation {
+        padding: 5px;
+        border-bottom: 1px solid #ddd;
+        margin: 0;
+    }
+    
+    .message-wrap {
+        box-shadow: 0 0 3px #ddd;
+        padding: 0;
+    }
+    
+    .msg {
+        padding: 5px;
+        /*border-bottom:1px solid #ddd;*/
+        margin: 0;
+    }
+    
+    .msg-wrap {
+        padding: 10px;
+        max-height: 400px;
+        overflow: auto;
+    }
+    
+    .time {
+        color: #bfbfbf;
+    }
+    
+    .send-wrap {
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        padding: 10px;
+        /*background: #f8f8f8;*/
+    }
+    
+    .send-message {
+        resize: none;
+    }
+    
+    .highlight {
+        background-color: #f7f7f9;
+        border: 1px solid #e1e1e8;
+    }
+    
+    .send-message-btn {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    
+    .btn-panel {
+        background: #f7f7f9;
+    }
+    
+    .btn-panel .btn {
+        color: #b8b8b8;
+        transition: 0.2s all ease-in-out;
+    }
+    
+    .btn-panel .btn:hover {
+        color: #666;
+        background: #f8f8f8;
+    }
+    
+    .btn-panel .btn:active {
+        background: #f8f8f8;
+        box-shadow: 0 0 1px #ddd;
+    }
+    
+    .btn-panel-conversation .btn,
+    .btn-panel-msg .btn {
+        background: #f8f8f8;
+    }
+    
+    .btn-panel-conversation .btn:first-child {
+        border-right: 1px solid #ddd;
+    }
+    
+    .msg-wrap .media-heading {
+        color: #22bdf8;
+        ;
+        font-weight: 700;
+        margin: 0px;
+    }
+    
+    .msg-date {
+        background: none;
+        text-align: center;
+        color: #aaa;
+        border: none;
+        box-shadow: none;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    body::-webkit-scrollbar {
+        width: 12px;
+    }
+    /* Let's get this party started */
+    
+     ::-webkit-scrollbar {
+        width: 6px;
+    }
+    /* Track */
+    
+     ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px #22bdf8;
+        /*        -webkit-border-radius: 10px;
+    border-radius: 10px;*/
+    }
+    
+    .pull-left {
+        float: left
+    }
+    
+    .img {
+        margin-right: 17px;
+        margin-left: 10px;
+    }
+    
+    .flo {
+        color: rgb(17, 35, 99);
+        float: right;
+        font-size: 17px;
+    }
+    /* Handle */
+    
+     ::-webkit-scrollbar-thumb {
+        /*        -webkit-border-radius: 10px;
+    border-radius: 10px;*/
+        background: #ddd;
+        -webkit-box-shadow: inset 0 0 6px #ffffff;
+    }
+    
+     ::-webkit-scrollbar-thumb:window-inactive {
+        background: #ddd;
+    }
+    
+    .myOrders2 {
+        width: 100%
+    }
+    
+    .m {
+        margin-right: 1px
+    }
+    
+    .fa-clock-o:before {
+        margin-right: 10px;
+    }

@@ -1,0 +1,51 @@
+<section id="intro">
+    <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0"><span>تغير </span>الاميل </h1>
+        <p class="mb-4 pb-0">مرحبا بك في قسم تغير الاميل نحن سعداء لانك معانا</p>
+    </div>
+</section>
+<!--==========================
+      Contact Section
+    ============================-->
+<main id="main">
+    <section id="contact" class="section-bg wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h2>مرحبا بك في قسم تغير الاميل </h2>
+                <p>نحن سعداء لانك معانا.</p>
+            </div>
+            <div class="form">
+                <p *ngIf="errorMessagPad" class="alert-danger alert">{{errorMessagPad}}</p>
+                <p *ngIf="errorMessage" class="alert-danger alert">{{errorMessage}}</p>
+                <p *ngIf="message" class="alert-success alert">{{message}}</p>
+                <form role="form" [formGroup]="newEmail" (ngSubmit)="saveNewEmail()">
+                    <div class="form-row">
+                        <div class="form-group col-md-6 col-md-offset-3">
+                            <label class="label1 res">كلمة السر </label>
+                            <input type="password" name="email " class="form-control res" id="password" formControlName="password" />
+                            <span *ngIf="(password.touched  || errorMessagPad!='') && password.invalid" class="error res">
+                                <span *ngIf="password.errors.required">من فضللك ادخل كلمة السر .</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6 col-md-offset-3">
+                            <label class="label1 res"> الاميل الجديد </label>
+                            <input type="email" name="email " class="form-control res" id="email" formControlName="email" />
+                            <span *ngIf="(email.touched || errorMessagPad
+                            ) && email.invalid" class="error res">
+                                <span *ngIf="email.errors.required">من فضللك ادخل بريك الاكتروني</span>
+                            <span *ngIf="email.errors.minlength">يجب الي يقل الاميل عن 11 حرفا.</span>
+                            <span *ngIf="email.errors.maxlength">الحد الاقصي للحروف هو 100.</span>
+                            <span *ngIf=" email.errors.email">من فضللك ادخل اميل صحيح</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="text-center"><button class="text-center" type="submit"> حفظ الاميل الجديد</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </section>
+</main>

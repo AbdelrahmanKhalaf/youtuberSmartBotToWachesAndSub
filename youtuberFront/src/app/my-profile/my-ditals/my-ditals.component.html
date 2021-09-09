@@ -1,0 +1,421 @@
+<title *ngIf='data'>Alqaqaa | {{data.name}}</title>
+<section id="intro">
+    <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0"> <span> _ </span> ملفي الشخصي</h1>
+        <p class="mb-4 pb-0">مرحبا بيك في شركة يوتيوبر للنجاح </p>
+    </div>
+</section>
+<main id="main" class="main-page">
+    <!--==========================
+      Speaker Details Section
+    ============================-->
+    <section id="speakers-details" class="wow fadeIn">
+        <div class="container">
+            <div class="section-header">
+                <h2>مرحبا بك في شركة يوتيوبر</h2>
+                <p>يسعدنا وجودك معنا.</p>
+            </div>
+            <p class="alert-danger alert" *ngIf="erorrma">{{erorrma}}</p>
+            <p class="alert-danger alert" *ngIf="erorrma">{{errorWri}} , تستطيع التسجيل معانا من هنا <a routerLink="atuh/register">التسجيل</a> او <a routerLink="auth/login">تسجيل الدخول</a></p>
+            <div class="boredr">
+                <div class="row" *ngIf="data">
+                    <legend class="myProfile">
+                        ملفي الشخصي
+                    </legend>
+                    <div class="col-md-4 col-lg-4 ffset-md-10 lable">
+
+                        <div class="myAvatar padding">
+
+                            <legend class="lable">
+                                صورتي الشخصيه
+
+                            </legend>
+
+                            <div>
+                                <div class="myOrders2 pd">
+                                    <img src="{{avatar}}" *ngIf="avatar" alt="Speaker 1" class="img-fluid m-l-10 ">
+
+                                    <img src="http://youtuberbot.com:3000/{{data.avatar}}" *ngIf="!avatar" alt="Speaker 1" class="img-fluid m-l-10">
+                                </div>
+
+                            </div>
+                            <div class="nav-menu ">
+                                <li class="buy-tickets float-right top"><a routerLink='updateIamage'>تغير
+                                        االصورة الشخصيه</a></li>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-lg-8 col-md-12 col-xs-12">
+                        <div class="details">
+
+                            <div class="myInfo">
+                                <p>
+
+                                    <legend class="lable">
+                                        معلوماتي الشتخصيه
+                                    </legend>
+                                </p>
+                                <!-- that  is info col lg -->
+
+                                <div class="row">
+                                    <div class="lable col-lg-7 col-xs-12 hidden-md hidden-xs hidden-sm visible-lg">
+                                        <div class="myOrders2">
+
+                                            <label class="font-lable">الاميل : </label> <span class="font-span">{{data.email}}</span>
+                                            <br>
+                                            <label class="font-lable" *ngIf="data.address"> العنوان : </label> <span class="font-span" *ngIf="data.address">{{data.address}}</span>
+                                            <br>
+                                            <label class="font-lable"> العمر : </label>
+                                            <span class="font-span">
+                                                {{age}} سنه</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="lable col-lg-5 col-xs-12 hidden-md hidden-xs hidden-sm visible-lg ">
+                                        <div class="myOrders2">
+
+                                            <label class="font-lable"> الاسم : </label> <span class="font-span">{{data.name | slice:0:18}}</span>
+                                            <br>
+                                            <label class="font-lable" *ngIf="data.address "> رقم الهاتف : </label> <span class="font-span" *ngIf="data.address ">
+                                                0{{data.phone}}</span>
+                                            <br>
+                                            <label class="font-lable" *ngIf="data.gender==0 "> الجنسيه : </label> <span class="font-span" *ngIf="data.gender==0 ">
+                                                ذكر</span>
+                                            <label class="font-lable" *ngIf="data.gender==1 "> الجنسيه : </label> <span class="font-span" *ngIf="data.gender==1 ">
+                                                انثي</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nav-menu hidden-md hidden-xs hidden-sm visible-lg ">
+                                    <li class="buy-tickets float-right sm " *ngIf="data "><a routerLink='updateInfo/me'>تغير معلوماتي الشخصيه</a>
+                                        <a class="inf-sm " routerLink='cahnge-password'>تغير كلمة السر</a>
+                                        <a class="inf-sm " routerLink='change-email'>تغير الاميل </a>
+
+                                    </li>
+
+                                </div>
+                                <!-- that  is info col md xs sm -->
+                                <!-- <div class="row ">
+                                    <div class="lable col-xs-12 visible-md visible-xs visible-sm hidden-lg ">
+                                        <label> Email : </label> <span>{{data.email}}</span>
+                                        <br>
+                                        <label *ngIf="data.address "> Address : </label> <span *ngIf="data.address ">
+                                            {{data.address}}</span>
+                                        <br>
+                                        <label *ngIf="!data.address "> Phone : </label> <span *ngIf="!data.address ">
+                                            0{{data.phone}}</span>
+                                        <label> Name : </label> <span>{{data.name | slice:0:30}}</span>
+                                        <br>
+                                        <label *ngIf="data.address "> Phone : </label> <span *ngIf="data.address ">
+                                            0{{data.phone}}</span>
+
+                                    </div>
+                                </div> -->
+                                <!-- <div class="nav-menu ">
+                                    <li class="buy-tickets float-right visible-md visible-xs visible-sm hidden-lg "><a class="inf-sm " routerLink='/update-info/{{data._id}}'>Update
+                                            Info</a>
+                                        <a class="inf-sm " routerLink='change-password'>Change
+                                            Password</a>
+                                    </li>
+                                </div> -->
+                            </div>
+
+                            <br>
+                            <!-- that  is Social col lg -->
+
+                            <div class="mysocial hidden-md hidden-xs hidden-sm visible-lg ">
+                                <div>
+                                    <legend class="lable ">
+                                        معومات قناتي وفديوهاتي
+
+                                    </legend>
+                                </div>
+                                <div class="social text-center ">
+                                    <a *ngIf="data.yourChannel" href="{{data.yourChannel}}" target="_blank"><i
+                                            class="fa fa-youtube"></i></a>
+                                    <a *ngIf="data.yourChannel" href="{{data.playlist}}" target="_blank"><i
+                                            class="fa fa-music" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="nav-menu ">
+                                    <li class="buy-tickets float-right visible-md hidden-xs hidden-sm visible-lg "><a routerLink='update-playlist/{{data._id}}'>
+                                            تغير قائمة فديوهاتي
+                                        </a>
+                                        <a class="inf-sm " routerLink='myMision/{{data._id}}'>مهامي اليوميه</a>
+
+                                    </li>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- that  is Social col md xs sm -->
+                <!-- <div class="details ">
+                    <div class="row ">
+                        <div class=" col-xs-12 visible-md visible-xs visible-sm hidden-lg ">
+                            <div class="mysocial ">
+                                <div>
+                                    <legend class="lable ">
+                                        My Social
+
+                                    </legend>
+                                </div>
+                                <div class="social ">
+
+                                </div>
+                                <div class="nav-menu ">
+                                    <li class="buy-tickets float-right "><a routerLink='/update-social/{{data}}'>Update
+                                            Social
+                                        </a></li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> -->
+                <div class="row ">
+                    <div class="myOrders col-sm-12 col-md-12  text-right">
+                        <legend class="lable ">
+                            معلومات باقتي
+                        </legend>
+                        <div *ngIf="data&& !data.workdays && !DetailsMyWeek" class="alert alert-dark edit text-center" role=" alert ">
+                            لم تشري باقه حتي الان , <a href="/home#buy-tickets"> يمكنك
+                                اختيار باقه من
+                                هنا</a>
+                        </div>
+                        <div *ngIf="DetailsMyWeek&&DetailsMyWeek.buy&&DetailsMyWeek.weakFinshed">
+
+                            <div class="row" *ngIf="data && !data.blocked">
+                                <div *ngIf="data && data.daysOff < 2" class="alert alert-primary col-sm-12  col-md-12 edit myOrders3">
+                                    في حالة ان الا يوجد لديك يام اجازه سيتم حظر الاميل تلقئياٌ
+                                </div>
+                                <div class="lable col-sm-12 col-md-6 hidden-md hidden-xs hidden-sm visible-lg ">
+                                    <div class="myOrders2">
+                                        <label> عدد سعات العمل : </label>
+                                        <span *ngIf="data.workingHours && data.workingHours >= 0">{{ data.workingHours |
+                                            countProfile}} ساعات
+                                            متبقيه
+                                        </span>
+                                        <span *ngIf="data.workingHours <= 0">0 ساعات متبقيه
+                                        </span>
+                                        <br>
+                                        <label> نهاية المدة : </label>
+                                        <span>{{data.endDaysWork | date:'mediumDate'}}</span>
+                                        <br>
+                                        <label> ايام العمل : </label>
+                                        <span>{{ data.workdays}}</span> يوم
+                                    </div>
+
+
+                                </div>
+                                <div class=" lable col-sm-12 col-md-6 hidden-md hidden-xs hidden-sm visible-lg ">
+                                    <div class="myOrders2">
+
+                                        <label> ايام الاجازه : </label>
+                                        <span>{{data.daysOff}} </span>يوم
+                                        <br>
+                                        <label> بداية المدة : </label>
+                                        <span>{{data.startDaysWork | date:'mediumDate'}}</span>
+                                        <br>
+                                        <label> الايام المتباقيه : </label>
+                                        <span>{{remainingDays2}}</span> يوم
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row" *ngIf=" data && data.blocked === true">
+                            <div class="alert alert-primary col-sm-12  col-md-12 edit myOrders3">
+                                لقد تم حظر الاميل يمكنك الرجوع لمسئول الموقع لتفعيله لك
+                            </div>
+                        </div>
+                        <div *ngIf="DetailsMyWeek&& !DetailsMyWeek.buy &&DetailsMyWeek.weakFinshed && !data.blocked" class="alert alert-warning edit " role="alert ">
+                            لقد انتهت فترة التجربه , يمكنك الرجوع الي الدعم لتفعيل باقتك او انتظر سيتم تفعيلها بعد 24 ساعه
+                        </div>
+
+                        <div class="row " *ngIf="DetailsMyWeek && !DetailsMyWeek.buy &&!DetailsMyWeek.weakFinshed ">
+                            <div class="alert alert-primary col-sm-12  col-md-12 edit myOrders3">
+                                انت الان في فترة التجربه نتمني للك الخير اينما كنت
+                            </div>
+                            <div *ngIf="data" class="lable col-sm-12 col-md-6 hidden-md hidden-xs hidden-sm visible-lg ">
+                                <div class="myOrders2">
+                                    <label> بداية الاسبوع : </label>
+                                    <span>{{DetailsMyWeek.startWeak | date:'mediumDate'}}</span>
+
+                                    <br>
+                                    <label> عدد سعات العمل : </label>
+                                    <span *ngIf="data.workingHours && data.workingHours >= 0">{{ data.workingHours |
+                                        countProfile}} ساعات
+                                        متبقيه
+                                    </span>
+                                    <span *ngIf="data.workingHours <= 0">0 ساعات متبقيه
+                                    </span>
+                                </div>
+
+
+                            </div>
+                            <div class=" lable col-sm-12 col-md-6 hidden-md hidden-xs hidden-sm visible-lg ">
+                                <div class="myOrders2">
+                                    <label *ngIf="DetailsMyWeek"> نهاية الاسبوع : </label>
+                                    <span *ngIf="DetailsMyWeek && DetailsMyWeek.endWeak   &&!data.blocked">{{DetailsMyWeek.endWeak
+                                        |
+                                        date:'mediumDate'}}</span>
+                                    <br>
+                                    <label> الايام المتباقيه : </label>
+                                    <span *ngIf="remainingDays">{{ remainingDays}}</span> ايام
+                                </div>
+                            </div>
+                            <div class="lable col-md-12 hidden-md hidden-xs hidden-sm visible-lg text-right ">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <br *ngIf="data && data.idBouqute">
+            <div class="boredr">
+
+                <div class="row" *ngIf="data && data.idBouqute">
+
+                    <div class="message-wrap col-lg-12">
+                        <div class=" myOrders ">
+                            <div>
+                                <legend class=" lable ">
+                                    معلومات لانجاز المهمه بنجاح والتحديثات الجديده للباقه
+                                </legend>
+
+                            </div>
+                            <div class="msg-wrap">
+                                <div class="media msg" *ngFor="let chat of massage">
+                                    <div class="myOrders2">
+                                        <div class="pull-right">
+                                            <img class="media-object img" data-src="holder.js/64x64" alt="64x64" style="width: 32px; height: 32px;" src="http://youtuberbot.com:3000/uploads/osama.jpg">
+                                        </div>
+                                        <div class="media-body">
+                                            <small class="pull-left text-left time">
+                                                الان<i class="fa fa-clock-o"></i></small>
+                                            <h5 class="media-heading text-right"> مسئول الشركة</h5>
+                                            <small class="pull-right text-right time  m">
+                                                {{chat.from }}</small>
+                                            <br>
+                                            <small class="col-lg-10 text-right flo"> {{chat.text}}
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="media msg  " *ngFor="let chat of cahts">
+                                    <div class="myOrders2">
+                                        <div class="pull-right">
+                                            <img class="media-object img" data-src="holder.js/64x64" alt="64x64" style="width: 32px; height: 32px;" src="http://youtuberbot.com:3000/uploads/osama.jpg">
+                                        </div>
+                                        <div class="media-body">
+                                            <small class="pull-left text-left time">
+                                                {{chat.date | date:'mediumDate'}}<i class="fa fa-clock-o"></i></small>
+                                            <h5 class="media-heading text-right"> مسئول الشركة</h5>
+                                            <small class="pull-right text-right time  m">
+                                                {{chat.userName }}</small>
+                                            <br>
+                                            <small class="col-lg-10 text-right flo"> {{chat.massage}}
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class=" row " *ngIf="(data && data.startDaysWork) || DetailsMyWeek ">
+                <div class=" col-md-12 ">
+                    <div class=" myOrders ">
+                        <div>
+                            <legend class=" lable ">
+                                اميلاتي المحدده
+                            </legend>
+                            <p *ngIf="errorAddEmail" class=" alert-danger alert">{{errorAddEmail}}</p>
+
+                            <div class="row" *ngIf="DataEmails">
+
+                                <div class="lable col-xs-2 col-md-4 col-lg-3 " *ngFor="let email of DataEmails.emails">
+                                    <div class="myOrders2">
+                                        <img style="width:181px;height:175px;margin-bottom:40px;margin-top: -11px;
+                                        " src="{{email.avatar}}" alt="Speaker 1" class="img-fluid m-l-12 ">
+                                        <h3 class="text-center lead"><a style="box-shadow: 0px 0px 30px rgb(248, 34, 73, ); font-weight: bold;" routerLink="detailsEmail/{{email._id}}">{{email.name }}</a></h3>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="nav-menu ">
+                                <li class="buy-tickets float-right visible-md hidden-xs hidden-sm visible-lg ">
+                                    <a class="inf-sm " style="cursor:pointer" (click)="AddEmail()">اضافة ايميل اخر
+                                    </a>
+                                </li>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <br>
+            <div class=" row ">
+                <div class=" col-md-12 ">
+                    <div class=" myOrders ">
+                        <div>
+                            <legend class=" lable ">
+                                المهام التي انجزة من المدة المحددة
+                            </legend>
+                            <div class="row" *ngIf=" data && data.blocked === true">
+                                <div class="alert alert-primary col-sm-12  col-md-12 edit myOrders3">
+                                    لقد تم حظر الاميل يمكنك الرجوع لمسئول الموقع لتفعيله لك
+                                </div>
+                            </div>
+                            <div *ngIf="data&& !data.workdays && !DetailsMyWeek && data&& !data.blocked" class="alert alert-dark edit text-center" role=" alert ">
+                                لم تشري باقه حتي الان , <a href="/home#buy-tickets">يمكنك اختيار باقه من هنا</a>
+                            </div>
+                            <div *ngIf="DetailsMyWeek && !DetailsMyWeek.buy &&!DetailsMyWeek.weakFinshed " class="alert alert-primary edit">
+                                انت الان في فترة التجربه نتمني للك الخير اينما كنت , سوف نبدء بحساب المهام عندما تنتهي فترة التجربه ويتم تفعيل الباقه
+                            </div>
+                            <div *ngIf="DetailsMyWeek&& !DetailsMyWeek.buy &&DetailsMyWeek.weakFinshed && data&& !data.blocked " class="alert alert-warning edit " role="alert ">
+                                لقد انتهت فترة التجربه , يمكنك الرجوع الي الدعم لتفعيل باقتك او انتظر سيتم تفعيلها بعد 24 ساعه
+                            </div>
+                            <div class="row text-right" *ngIf="DetailsMyWeek&& DetailsMyWeek.buy && DetailsMyWeek.weakFinshed && !data.blocked ">
+                                <div class=" lable col-sm-12 col-md-6 hidden-md hidden-xs hidden-sm visible-lg ">
+                                    <div class="myOrders2">
+                                        <label *ngIf="DetailsMyWeek"> لقد اتشهدت : </label>
+                                        <span>{{mission}}</span> مرة
+                                    </div>
+                                </div>
+                                <div class=" lable col-sm-12 col-md-6 hidden-md hidden-xs hidden-sm visible-lg ">
+                                    <div class="myOrders2">
+                                        <label> اشتركاتك : </label>
+                                        <span>{{this.RequestSub}}</span> مشترك جدد
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+</main>

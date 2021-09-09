@@ -1,0 +1,45 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Add-business</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a routerLink="/admin">Home</a></li>
+                        <li class="breadcrumb-item active">Add-business</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <p *ngIf="errorMessage" class=" alert-danger alert">{{errorMessage}}</p>
+
+        <form [formGroup]="postBusiness" (ngSubmit)="addBusiness()">
+            <div class="form-group">
+
+                <label for="exampleFormControlInput1">قائمة التشغيل المطلوبه</label>
+                <select type="text" class="form-control" id="playlistRequired" placeholder="قائمة التشغيل المطلوبة " formControlName="buy">
+                    <option value="true">تفعيل</option>
+                    <option value="false">توقيف</option>
+                </select>
+                <p *ngIf="buy.touched  && buy.invalid" class="alert-danger ">
+                    <strong *ngIf="buy.errors.required">Please
+                        enter Title</strong>
+                </p>
+            </div>
+            <button type="submit" class="btn btn-outline-info btn-block">حفظ التعديل</button>
+
+        </form>
+
+    </section>
+
+
+
+</div>

@@ -1,0 +1,241 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Profile</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">User Profile</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+
+                    <!-- Profile Image -->
+                    <div class="card card-primary card-outline">
+                        <div class="card-body box-profile" *ngIf="user">
+                            <div class="text-center">
+                                <img class="profile-user-img img-fluid img-circle" src="http://youtuberbot.com:3000/{{user.avatar}}" alt="User profile picture">
+                            </div>
+
+                            <h3 class="profile-username text-center">{{user.name}}</h3>
+
+                            <p *ngIf="user.isAdmin" class="text-muted text-center">ادمن</p>
+                            <p *ngIf="!user.isAdmin" class="text-muted text-center">مستخدم</p>
+
+                            <ul class="list-group list-group-unbordered mb-3">
+                                <li class="list-group-item">
+                                    <b>الاميل</b> <a class="float-right">{{user.email}}</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>الهاتف</b> <a class="float-right">0{{user.phone}}</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>كود المستخدم</b> <a class="float-right">{{user.code}}</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>كود الصديق</b> <a class="float-right">{{user.codeFrinde}}</a>
+                                </li>
+                            </ul>
+
+                            <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+
+                    <!-- About Me Box -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">المهام المكتمله والغير مكتمله </h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body" *ngIf="bouqute">
+                            <strong><i class="fas fa-book mr-1"></i> المشاهدات</strong>
+
+                            <p class="text-muted">
+                                <u *ngFor="let wach of bouqute.wached">
+                                    <li>
+                                        {{wach.userId}}
+                                    </li>
+                                </u>
+                            </p>
+
+
+                            <strong><i class="fas fa-map-marker-alt mr-1"></i> المهمام اليوم </strong>
+
+                            <p class="text-muted">
+                                <u *ngFor="let mission of bouqute.mission">
+                                    <li>
+                                        {{mission.userId}}
+                                    </li>
+                                </u>
+                            </p>
+
+
+
+
+
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+                <div class="col-md-9">
+                    <div class="card">
+                        <div class="card-header p-2">
+                            <ul class="nav nav-pills">
+                                <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">تفاصيل الباقه</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">الاميلات</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">الاعدادت</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="tab-content">
+                                <div class="active tab-pane" id="activity">
+                                    <!-- Post -->
+                                    <div class="post" *ngIf="user  && user.idBouqute">
+                                        <span>اسم الباقة :{{user.idBouqute.title}}</span>
+                                        <br>
+                                        <span>حالة الاميل :</span>
+                                        <span *ngIf="user.blocked"> محظور</span>
+                                        <span *ngIf="!user.blocked"> غير محظور</span>
+                                        <br>
+                                        <span *ngIf="bouqute">
+                                            حالة الباقه للمستخدم :
+                                            <span *ngIf="bouqute.weekFinished &&  bouqute.Activated">مفعله</span>
+                                        <span *ngIf="!bouqute.weekFinished &&  !bouqute.Activated">تجربه</span>
+                                        <span *ngIf="bouqute.weekFinished &&  !bouqute.Activated"> غير مفعله </span>
+                                        </span>
+                                        <br>
+                                        <span *ngIf="bouqute && !bouqute.weekFinished">
+                                            <span>بداية الاسبوع :</span>
+                                        <span>{{bouquteData.startWeak | date:"short"}}</span>
+                                        <br>
+                                        <span>نهاية الاسبوع :</span>
+                                        <span>{{bouquteData.endWeak | date:"short"}}</span>
+                                        </span>
+                                        <span *ngIf="user  && bouqute.weekFinished">
+                                            <span>بداية المده :</span>
+                                        <span>{{user.startDaysWork | date:"short"}}</span>
+                                        <br>
+                                        <span>نهاية المده :</span>
+                                        <span>{{user.endtDaysWork | date:"short"}}</span>
+                                        <br>
+                                        <span> ايام الاجازه :</span>
+                                        <span>{{user.daysOff}}</span>
+                                        <br>
+                                        <span> ايام العمل :</span>
+                                        <span>{{user.workdays}}</span>
+                                        <br>
+                                        <span> ساعات العمل :</span>
+                                        <span>{{user.workingHours}}</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- /.tab-pane -->
+                                <div class="tab-pane" id="timeline" *ngIf="bouqute">
+                                    <!-- The timeline -->
+                                    <div *ngFor="let email of bouqute.emails">
+                                        <p>اسم الاميل : {{email.name}} </p>
+                                    </div>
+                                    <p> عدد الاميلات : {{numberOfEmails}}</p>
+                                    <h1 *ngIf="numberOfEmails==10"> اكتملت الاميلات</h1>
+                                    <h1 *ngIf="numberOfEmails!=10">الاميلات غير مكتمله</h1>
+
+                                </div>
+                                <!-- /.tab-pane -->
+
+                                <div class="tab-pane" id="settings" *ngIf="user">
+                                    <p *ngIf="errorMessage" class=" alert-danger alert">{{errorMessage}}</p>
+
+                                    <form [formGroup]="formUpdate" (ngSubmit)="update()" class="form-horizontal">
+                                        <div class="form-group row">
+                                            <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" formControlName="name" class="form-control" [ngModel]="user.name" id="inputName" placeholder="Name">
+                                                <p *ngIf="name.touched  && name.invalid" class="alert-danger alert ">
+                                                    <strong *ngIf="name.errors.required">Please
+                                                        enter phone.</strong>
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputEmail" class="col-sm-2 col-form-label">phone</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" [ngModel]="user.phone" formControlName="phone" class="form-control" id="phone" placeholder="phone">
+                                                <p *ngIf="phone.touched  && phone.invalid" class="alert-danger alert ">
+                                                    <strong *ngIf="phone.errors.required">Please
+                                                        enter phone.</strong>
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="inputName2" class="col-sm-2 col-form-label">address</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" [ngModel]="user.address" formControlName="address" class="form-control" id="address" placeholder="Address">
+                                                <p *ngIf="address.touched  && address.invalid" class="alert-danger alert ">
+                                                    <strong *ngIf="address.errors.required">Please
+                                                        enter address.</strong>
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="inputName2" class="col-sm-2 col-form-label">blocked</label>
+                                            <div class="col-sm-10">
+                                                <select type="text" [ngModel]="user.blocked" formControlName="blocked" class="form-control" id="blocked" placeholder="blocked">
+                                                    <option value="false">رفع الحظر</option>
+                                                    <option value="true">حظر</option>
+                                                </select>
+                                                <p *ngIf="blocked.touched  && blocked.invalid" class="alert-danger alert ">
+                                                    <strong *ngIf="blocked.errors.required">Please
+                                                        enter blocked.</strong>
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <div class="offset-sm-2 col-sm-10">
+                                                <button type="submit" class="btn btn-danger">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- /.tab-pane -->
+                            </div>
+                            <!-- /.tab-content -->
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>

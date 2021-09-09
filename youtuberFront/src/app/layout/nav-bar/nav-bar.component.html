@@ -1,0 +1,29 @@
+<header id="header">
+    <div class="container">
+        <div id="logo" class>
+            <!-- Uncomment below if you prefer to use a text logo -->
+            <a href="#intro" class="scrollto"><img src="assets/img/apple-touch-icon.png" alt="" title=""></a>
+            <h1><a href="#intro">يو<span>ت</span>يوبر</a></h1>
+
+
+        </div>
+
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <li class="buy-tickets"><a href="/home#buy-tickets">اشتري الان</a></li>
+
+                <!-- <li class="buy-tickets"><a *ngIf="currentLanguage == 'ar'" (click)="changeLanguageTo('en')">English</a></li> -->
+                <li><a *ngIf="!login()" routerLink='/auth/register'>التسجيل معانا</a></li>
+                <li><a *ngIf="!login()" routerLink='/auth/login'>تسجيل الدخول</a></li>
+                <li><a *ngIf="login()" routerLink='/my-profile'>الصفحه الشخصية</a></li>
+                <li><a *ngIf="login()" (click)="logout()" routerLink='/home'>تسجيل الخروج</a></li>
+                <li><a routerLink='/contact-us'>تواصل معانا</a></li>
+                <li><a routerLink='/bouquts'>الباقات</a></li>
+                <li><a routerLink='/services'> خدمتنا</a></li>
+                <li><a routerLink='/home'>الصفحه الرئسيه</a></li>
+                <!-- <li class="buy-tickets"><a *ngIf="currentLanguage == 'en'" (click)="changeLanguageTo('ar')">العربية</a></li> -->
+            </ul>
+        </nav>
+        <!-- #nav-menu-container -->
+    </div>
+</header>

@@ -1,0 +1,121 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="card-title"> المستخدمين </h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a routerLink="/admin">الصفحه الرئسيه</a></li>
+                        <li class="breadcrumb-item active"> السمتخدمين </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title"> المستخدمين </h3>
+
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                        <i class="fas fa-minus"></i></button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                        <i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-striped projects row-border hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                    <thead>
+                        <tr>
+                            <th style="width: 1%">
+                                #
+                            </th>
+                            <th style="width: 20%">
+                                اسم المستخدم
+                            </th>
+                            <th style="width: 20%">
+                                صورتو
+                            </th>
+                            <th style="width: 20%">
+                                حالة الاميل
+                            </th>
+                            <th style="width: 20%">
+                                الباقه
+                            </th>
+                            <th style="width: 20%">
+
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of users ; index as i">
+                            <td>
+                                {{i+1}}
+                            </td>
+                            <td>
+                                <a>
+                                    {{user.name}}
+                                </a>
+                                <br />
+                                <small>
+                                    Created {{user.date | date : "short"}}
+                                </small>
+                            </td>
+                            <td>
+                                <li class="list-inline-item">
+                                    <img alt="Avatar" class="table-avatar" src="http://youtuberbot.com:3000/{{user.avatar}}">
+                                </li>
+                            </td>
+                            <td>
+                                <a *ngIf="user.blocked">
+                                    محظور
+                                </a>
+                                <a *ngIf="!user.blocked">
+                                    غير محظور
+                                </a>
+                            </td>
+                            <!-- <td>
+
+                                <a *ngIf="user&& user.idBouqute.title">
+                                    {{user.idBouqute.title}}
+                                </a>
+                            </td> -->
+                            <td class="project-actions text-right">
+                                <a class="btn btn-primary btn-sm" routerLink="/ditalsuser/{{user._id}}">
+                                    <i class="fas fa-folder">
+                                    </i> View
+                                </a>
+                                <a class="btn btn-info btn-sm" routerLink="/bouquets/reantalupdate/{{user._id}}">
+                                    <i class="fas fa-pencil-alt">
+                                    </i> Edit
+                                </a>
+                                <!-- <button class="btn btn-danger btn-sm" (click)="deleteBouqute(user._id)">
+                                    <i class="fas fa-trash">
+                                    </i>
+                                    Delete
+                                </button> -->
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+</div>

@@ -1,0 +1,98 @@
+<section id="intro">
+    <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0"><span>تواصل </span> معانا</h1>
+        <p class="mb-4 pb-0">مرحبا بك في قسم الاتصال </p>
+    </div>
+</section>
+<main id="main">
+    <section id="contact" class="section-bg wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h2>تواصل معانا</h2>
+                <p> نحن سعداء لان معانا نتمني للك الخير دئما .</p>
+            </div>
+
+            <div class="row contact-info">
+
+                <div class="col-md-4">
+                    <div class="contact-address">
+                        <i class="ion-ios-location-outline"></i>
+                        <h3>العنوان</h3>
+                        <address>شارع جامع الشيخ بلال , طريق اسكندريه مطروح , مصر</address>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="contact-phone">
+                        <i class="ion-ios-telephone-outline"></i>
+                        <h3>رقم الهاتف</h3>
+                        <p><a href="tel:+0201226706792"> 01226706792 02+</a></p>
+                        <p><a href="tel:+0201064006732"> 01064006732 02+</a></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="contact-email">
+                        <i class="ion-ios-email-outline"></i>
+                        <h3>البريد الاكتروني</h3>
+                        <p><a href="mailto:info@example.com">lenamarwan575@gmail.com</a></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form">
+                <p *ngIf="message" class="alert-success alert">{{message}}</p>
+                <p *ngIf="errorMessage" class="alert-danger alert">{{errorMessage}}</p>
+                <form [formGroup]="formfeedback" (ngSubmit)="feedbackSend()" role="form" class="contactForm">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="label1">اسمك </label>
+                            <input type="text" name="name" class="form-control" id="name" formControlName="name" />
+                            <div *ngIf="name.touched  && name.invalid" class="error">
+                                <span *ngIf="des.errors.required">من فضللك ادخل الاسم.</span>
+                                <span *ngIf="des.errors.minlength">الاسم يجب ان لا تقل عن 8 احرف.</span>
+                                <span *ngIf="des.errors.maxlength">الحد الاقص هو 60.</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="label1">البريد الالكتروني </label>
+                            <input type="email" class="form-control" name="email" id="email" formControlName="email" />
+                            <span *ngIf="email.touched  && email.invalid" class="error">
+                                <span *ngIf="des.errors.required">من فضللك ادخل البريد الالكتروني.</span>
+                            <span *ngIf="des.errors.minlength">البريد الاكتروني يجب ان لا تقل عن 8 احرف.</span>
+                            <span *ngIf="des.errors.maxlength">الحد الاقص هو 315.</span>
+                            <span *ngIf=" email.errors.email">من فضللك ادخل اميل صحيح</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label class="label1">الموضع</label>
+                            <input type="text" class="form-control" name="subject" id="subject" formControlName="subject" />
+                            <div *ngIf="subject.touched  && subject.invalid" class="error">
+                                <span *ngIf="des.errors.required">من فضللك ادخل الموضع.</span>
+                                <span *ngIf="des.errors.minlength">الموضع يجب ان لا تقل عن 8 احرف.</span>
+                                <span *ngIf="des.errors.maxlength">الحد الاقص هو 40.</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label class="label1">الرساله</label>
+                            <textarea class="form-control" name="message" rows="5" formControlName="des"></textarea>
+                            <div *ngIf="des.touched  && des.invalid" class="error">
+                                <span *ngIf="des.errors.required">من فضللك ادخل الرساله.</span>
+                                <span *ngIf="des.errors.minlength">الرساله يجب ان لا تقل عن 8 احرف.</span>
+                                <span *ngIf="des.errors.maxlength">الحد الاقص هو 315.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center"><button type="submit">ارسل الرساله</button></div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+</main>

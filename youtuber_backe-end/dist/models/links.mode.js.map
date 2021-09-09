@@ -1,0 +1,1 @@
+{"version":3,"file":"links.mode.js","sourceRoot":"","sources":["../../src/models/links.mode.ts"],"names":[],"mappings":";;;AAAA,qCAA6C;AAC7C,uCAAgF;AAChF,MAAM,MAAM,GAAW,IAAI,iBAAM,CAAC;IAChC,MAAM,EAAE;QACN,IAAI,EAAE,kBAAQ;QACd,GAAG,EAAE,OAAO;KACb;IACD,IAAI,EAAE;QACJ,IAAI,EAAE,MAAM;KACb;CACF,CAAC,CAAC;AACU,QAAA,IAAI,GAAG,gBAAK,CAAC,MAAM,EAAE,MAAM,CAAC,CAAC"}

@@ -1,0 +1,45 @@
+<div class="content">
+    <div class="container" *ngIf="bouquet">
+
+        <div class="row">
+
+
+
+            <div class="col-md-12">
+                <br>
+                <br>
+                <br>
+
+                <h1 class="my-3">حالة الباقه </h1>
+                <p class="my-3" *ngIf="bouquet.buy"> مفعاله</p>
+                <p class="my-3" *ngIf="!bouquet.buy"> غير مفعاله</p>
+                <h3 class="my-3"> حالة التجريه</h3>
+                <p class="my-3" *ngIf="bouquet.weakFinshed"> لقد انتهت</p>
+                <p class="my-3" *ngIf="!bouquet.weakFinshed"> لم تنتهي </p>
+                <h3 class="my-3"> بداية الاسبوع
+                </h3>
+                <p class="my-3">{{bouquet.startWeak}}</p>
+                <h3 class="my-3">
+                    نهاية الاسبوع </h3>
+                <p class="my-3">{{bouquet.endWeak}}</p>
+                <h3 class="my-3">عنوان المستخدم</h3>
+                <p class="my-3">{{bouquet.idUser.address}}</p>
+                <h3 class="my-3">اسم المستخدم </h3>
+                <p class="my-3">{{bouquet.idUser.name}}.</p>
+                <h3 class="my-3">كود المستخدم </h3>
+                <p class="my-3">{{bouquet.idUser.code}}.</p>
+                <h3 class="my-3">كود الصديق </h3>
+                <p class="my-3">{{bouquet.idUser.codFrinde}}.</p>
+                <h3 class="my-3"> اسم الباقه </h3>
+                <p class="my-3">{{bouquet.idUser.idBouqute.title}}</p>
+                <h3 class="my-3">قناة المستخدم </h3>
+                <p class="my-3">{{bouquet.idUser.yourChannel}}</p>
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- Related Projects Row -->
+        <br>
+
+        <!-- /.row -->
+    </div>
+</div>

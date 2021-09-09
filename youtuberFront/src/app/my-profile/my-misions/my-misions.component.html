@@ -1,0 +1,63 @@
+<section id="intro">
+    <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0">المهام <span> اليوميه </span> </h1>
+        <p class="mb-4 pb-0">مرحبا بيك في شركة يوتيوبر للنجاح </p>
+    </div>
+</section>
+<main id="main" class="main-page">
+    <!--==========================
+      Speaker Details Section
+    ============================-->
+    <section id="speakers-details" class="wow fadeIn">
+        <div class="container">
+            <div class="section-header">
+                <h2>مرحبا بك في شركة يوتيوبر</h2>
+                <p>يسعدنا وجودك معنا.</p>
+            </div>
+            <div class="boredr">
+                <div class="row">
+                    <legend class="myProfile">
+                        المهام اليوميه
+                    </legend>
+                </div>
+                <div class="myOrders col-md-12  text-right" *ngIf="DetailsMyBouqute">
+
+                    <div class="row ">
+                        <legend class="myProfile" *ngIf="DetailsMyBouqute.mission==''">
+                            لا يوجد لديك مهام الان
+                        </legend>
+                        <div class="col-md-6  " *ngFor="let mission of DetailsMyBouqute.mission ,index as i">
+                            <div *ngIf="DetailsMyBouqute.workingHours>= 0">
+
+                                <div class="myOrders2">
+                                    <legend class="myProfile">
+                                        المهمه رقم {{i + 1}}
+                                    </legend>
+                                    <iframe id="music" class="youtube-video" width="100%" height="315" [src]="IDSMission[i]"></iframe>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div *ngIf="DetailsMyBouqute.workingHours <= 0">
+                            <div class="col-md-12  ">
+                                <div class="myOrders2">
+                                    <legend class="myProfile">
+                                        لقد انهيت المهام
+                                    </legend>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>

@@ -1,0 +1,108 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="card-title"> البقات المستخدمين الثلاث شهور</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a routerLink="/admin">الصفحه الرئسيه</a></li>
+                        <li class="breadcrumb-item active">بقات السمتخدمين المجانيه</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title"> البقات المستخدمين الثلاث شهور</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                        <i class="fas fa-minus"></i></button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                        <i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-striped projects row-border hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                    <thead>
+                        <tr>
+                            <th style="width: 1%">
+                                #
+                            </th>
+                            <th style="width: 20%">
+                                اسم المستخدم
+                            </th>
+                            <th style="width: 30%">
+                                اسم الباقه
+                            </th>
+                            <th style="width: 30%">
+                                كود الصديق
+                            </th>
+                            <th style="width: 20%">
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let busines of business">
+                            <td>
+                                #
+                            </td>
+                            <td>
+                                <a>
+                                    {{busines.idUser.name}}
+                                </a>
+                                <br />
+                                <small>
+                                    Created {{busines.dateOut | date : "short"}}
+                                </small>
+                            </td>
+                            <td>
+                                <a>
+                                    {{busines.idUser.idBouqute.title}}
+                                </a>
+                            </td>
+                            <td>
+                                <a>
+                                    {{busines.idUser.codeFrinde}}
+                                </a>
+                            </td>
+                            <td class="project-actions text-right">
+                                <a class="btn btn-primary btn-sm" routerLink="/bouquets/details-bouquet/{{busines.idUser.idBouqute._id}}">
+                                    <i class="fas fa-folder">
+                                    </i> View
+                                </a>
+                                <a class="btn btn-info btn-sm" routerLink="/bouquets/reantalupdate/{{busines.idUser._id}}">
+                                    <i class="fas fa-pencil-alt">
+                                    </i> Edit
+                                </a>
+                                <!-- <button class="btn btn-danger btn-sm" (click)="deleteBouqute(busines._id)">
+                                    <i class="fas fa-trash">
+                                    </i>
+                                    Delete
+                                </button> -->
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+</div>

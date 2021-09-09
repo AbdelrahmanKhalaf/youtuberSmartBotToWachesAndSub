@@ -1,0 +1,138 @@
+.nav-menu li.buy-tickets a {
+    background: rgb(233, 237, 251);
+    color: #112363;
+    border: rgb(233, 237, 251);
+    font-weight: bold;
+}
+
+.nav-menu li.buy-tickets a:hover {
+    background: #f82249;
+    border: #f82249;
+    font-weight: bold;
+    color: #fff;
+}
+
+legend {
+    background-color: rgb(233, 237, 251);
+    color: #112363;
+    ;
+    padding: 5px 10px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 4px;
+}
+
+label {
+    color: #112363;
+    font-size: 17px;
+    border-radius: 26px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 4px;
+}
+
+span {
+    color: black;
+    border-radius: 26px;
+    padding: 6px;
+    text-transform: capitalize;
+}
+
+.myInfo,
+.mysocial,
+.myAvatar,
+.myOrders,
+.bordreO {
+    border: #f82249 2px groove;
+    padding: 11px 23px 19px 21px;
+    ;
+    border-radius: 10px;
+}
+
+.nav-menu li.buy-tickets a {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.lable {
+    font-size: 20px;
+    font-weight: 650px;
+}
+
+.m-0 {
+    margin: 0px;
+}
+
+.myProfile {
+    font-size: 23px;
+    border-radius: 8px 8px 2px 2px;
+}
+
+.boredr {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffff;
+}
+
+.m-0 div {
+    margin-bottom: 20px;
+}
+
+.m-0 div .img-fluid {
+    width: 68px;
+    height: 47px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px rgb(17, 35, 99, 0.25);
+}
+
+.bordreO {
+    padding: 10px 22px 0px 21px;
+}
+
+.m-0 div .nav-menu li.buy-tickets a {
+    font-size: 14px;
+    width: 126px;
+}
+
+.alert {
+    padding: 5px;
+}
+
+@media (max-width: 1199px) {
+    label[_ngcontent-tbt-c62] {
+        font-size: 10px;
+        font-weight: 550px;
+    }
+}
+
+@media (max-width: 991px) {
+    label[_ngcontent-tbt-c62] {
+        font-size: 10px;
+        font-weight: 550px;
+    }
+}
+
+.padding {
+    padding-bottom: 66px;
+}
+
+.top {
+    margin-top: 44px;
+}
+
+.edit {
+    box-shadow: 0px 0px 30px rgb(17, 35, 99, 0.25);
+    margin-top: 31px;
+    padding: 20px;
+    border: 1px solid #f82249;
+    font-size: 25px;
+}
+
+.myOrders2 {
+    border: #ead4c0 2px solid;
+    box-shadow: 0px 0px 30px rgb(234, 212, 192);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}

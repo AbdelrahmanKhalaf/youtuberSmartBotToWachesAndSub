@@ -1,0 +1,47 @@
+<section id="intro">
+    <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0"><span>تغير </span> قائمة التشغيل</h1>
+        <p class="mb-4 pb-0">مرحبا بك في قسم تغير قائمة التشغيل نحن سعداء لانك معانا</p>
+    </div>
+</section>
+<!--==========================
+      Contact Section
+    ============================-->
+<main id="main">
+    <section id="contact" class="section-bg wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h2>مرحبا بك في قسم تغير قائمة التشغيل </h2>
+                <p>نحن سعداء لانك معانا.</p>
+            </div>
+            <div class="form">
+                <p *ngIf="errorMessagPad" class="alert-danger alert">{{errorMessagPad}}</p>
+                <p *ngIf="errorMessage" class="alert-danger alert">{{errorMessage}}</p>
+                <p *ngIf="message" class="alert-success alert">{{message}}</p>
+                <form role="form" [formGroup]="newPlayList" (ngSubmit)="saveplaylist()">
+                    <div class="form-row">
+                        <div class="form-group col-md-6 col-md-offset-3">
+                            <label class="label1 res">كلمة السر </label>
+                            <input type="password" name="email " class="form-control res" id="password" formControlName="password" />
+                            <span *ngIf="(password.touched  || errorMessagPad!='') && password.invalid" class="error res">
+                                <span *ngIf="password.errors.required">من فضللك ادخل كلمة السر .</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6 col-md-offset-3">
+                            <label class="label1 res"> قائمة التشغيل الجديده</label>
+                            <input type="text" name="playlist " class="form-control res" id="playlist" formControlName="playlist" />
+                            <span *ngIf="(playlist.touched  || errorMessagPad) && playlist.invalid" class="error res">
+                                <span *ngIf="playlist.errors.required">من فضللك ادخل قائمة التشغيل الجديده.</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="text-center"><button class="text-center" type="submit"> حفظ كلمة قائمة التشغيل</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </section>
+</main>

@@ -1,0 +1,9 @@
+<main id="main">
+    <app-nav-bar></app-nav-bar>
+    <router-outlet></router-outlet>
+    <p *ngIf="massege" class="alert-warning alert edit">{{massege}} <a routerLink="/my-profile/activeEmail">
+            اضغط هنا</a></p>
+    <app-footer></app-footer>
+    <p *ngIf="massege" class="alert-warning alert edit">{{massege}} <a routerLink="/my-profile/activeEmail">
+            اضغط هنا </a></p>
+</main>

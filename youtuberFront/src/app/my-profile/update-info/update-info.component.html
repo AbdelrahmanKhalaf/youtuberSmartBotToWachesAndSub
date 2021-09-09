@@ -1,0 +1,76 @@
+<!--==========================
+      Contact Section
+    ============================-->
+<section id="intro">
+    <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0"><span>تحديث </span> معلوماتك </h1>
+        <p class="mb-4 pb-0">مرحبا بك في قسم تحديث المعلومات</p>
+    </div>
+</section>
+<main id="main">
+    <section id="contact" class="section-bg wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h2> تحديث معلوماتي </h2>
+                <p>نحن سعداء لانك معانا .</p>
+            </div>
+            <div class="form">
+                <p *ngIf="errorMessage" class=" alert-danger alert">{{errorMessage}}</p>
+                <form role="form" class="contactForm" [formGroup]="UpdateUser" (ngSubmit)="PutUser()" *ngIf="DataUser">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="label1">كلمة السر</label>
+                            <input type="password" class="form-control" name="password" id="password" formControlName="password" />
+                            <span class="validation" *ngIf="(password.touched
+                            )  && password.invalid" class="error ">
+                                <span *ngIf="password.errors.required">من فضللك ادخل كلمة السر.</span>
+                            <span *ngIf="password.errors.minlength">يجب ان لا تقل كلمة السر عن 11 حرفاً.</span>
+                            <span *ngIf="password.errors.maxlength">الحد الاقصي للحروف هو 315.</span>
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="label1">اسمك</label>
+                            <input type="text" name="name" class="form-control" id="name" formControlName="name" [ngModel]="DataUser.name" />
+                            <div *ngIf="(name.touched
+                            )  && name.invalid" class="error">
+                                <span *ngIf="name.errors.required">من فضللك ادخل اسمك .</span>
+                                <span *ngIf="name.errors.minlength"> يجب الي قل الاسم عن 8 احرف.</span>
+                                <span *ngIf="name.errors.maxlength">الحد الاقصى للطول .</span>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="label1">رقم الهاتف</label>
+                            <input type="text" name="phone" class="form-control" id="phone" formControlName="phone" [ngModel]="0+DataUser.phone" />
+                            <div *ngIf="name.touched  && name.invalid" class="error">
+                                <span class="validation" *ngIf="(phone.touched 
+                                )  && phone.invalid" class="error">
+                                    <span *ngIf="phone.errors.required">من فضللك ادخل رقم الهاتف.</span>
+                                <span *ngIf="phone.errors.minlength"> يجب الي يقل رقم الهاتف عن 11 حرفا.</span>
+                                <span *ngIf="phone.errors.maxlength">الحد الاقصي للحروف هو 315.</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="label1">عنوانك</label>
+                            <input type="text" class="form-control" id="address" name="address" formControlName="address" [ngModel]="DataUser.address" />
+                            <span class="validation" *ngIf="(address.touched 
+                            )  && address.invalid" class="error">
+                                <span *ngIf="address.errors.required">من فضللك ادخل عنوانك.</span>
+                            <span *ngIf="address.errors.minlength">يجب ألا يقل العنوان عن 11 حرفًا.</span>
+                            <span *ngIf="address.errors.maxlength">الحد الاقصى للجروف هو 315 .</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="text-center"><button type="submit">تحديث معلوماتي</button></div>
+                </form>
+            </div>
+        </div>
+
+    </section>
+</main>
+<!-- #contact -->

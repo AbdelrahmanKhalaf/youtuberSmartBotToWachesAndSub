@@ -1,0 +1,17 @@
+.close {
+    text-align: left;
+    float: left;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: 100%;
+}
+
+span {
+    content: "\00A3";
+    font-family: "Raleway", sans-serif;
+}
+
+h6 {
+    font-family: "Raleway", sans-serif;
+}
